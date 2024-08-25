@@ -5,20 +5,22 @@ import Link from "next/link";
 
 const Card = ({img, caption, label}) => {
   return (
-    <div className={oxygen + "flex transition-all outline outline-2 outline-transparent hover:outline-teal-secondary flex-col flex-shrink-0 w-min border border-[#f3f9fc] p-3 pb-6 rounded-3xl bg-white shadow-xl drop-shadow-md"}>
+    <div className={oxygen + "flex flex-col md:flex-row lg:flex-col w-full gap-4 lg:w-min transition-all outline outline-2 outline-transparent hover:outline-teal-secondary flex-shrink-0 border border-[#f3f9fc] p-3 pb-6 md:pb-3 lg:pb-6 rounded-3xl bg-white shadow-xl drop-shadow-md"}>
       <Image
         src={img}
         alt=""
         sizes="30vw"
         isZoomed={true}
-        className="aspect-[4/5] min-w-80"
+        className="aspect-[3/2] lg:aspect-[4/5] min-w-48 max-w-full md:max-w-96 lg:max-w-full lg:min-w-72 xl:min-w-80"
       />
-      {
-        label
-      }
-      <p className="w-[4/5] text-pretty text-primary-dark">
-        {caption}
-      </p>
+      <div>
+        {
+          label
+        }
+        <p className="w-[4/5] mt-4 text-pretty text-primary-dark text-lg">
+          {caption}
+        </p>
+      </div>
     </div>
   )
 }
@@ -49,20 +51,21 @@ const AcademyHook = () => {
         </div>
       </div> */}
       <div className="relative w-full py-20 flex justify-center">
-        <div className="w-[80%] max-w-[1300px] flex flex-col items-center gap-10">
-          <div about="section-heading" className="mb-12 flex flex-col items-center">
-            <h2 className={poppins + "text-[27px] font-semibold capitalize text-teal-secondary text-center"}>
+        <div className="w-[90%] md:w-[80%] max-w-[1300px] flex flex-col items-center gap-10">
+          <div about="section-heading" className="mb-4 lg:mb-12 flex flex-col items-center">
+            <h2 className={poppins + "text-2xl font-semibold capitalize text-teal-secondary text-center"}>
               SHORELAB ACADEMY 2025
             </h2>
-            <h1 className={poppins + "text-[48px] font-semibold text-primary-dark leading-tight text-center text-pretty"}>
+            <h1 className={poppins + "text-4xl lg:text-5xl font-semibold text-primary-dark leading-tight text-center text-pretty"}>
               Leading Marine Conservation Through Tech Innovation
             </h1>
           </div>
-          <div className="flex flex-row justify-center items-start gap-5">
+          <div className="flex flex-col lg:flex-row justify-center items-start gap-5">
             <Card 
-              img="/static/home-shorelab_1.webp"              // source google maps
+              img="/static/home-shorelab_1.webp"
+              // source google maps
               label={
-                <label className={"my-6 text-[15px] px-4 py-1 rounded-full w-fit bg-salmon-accent/25 text-salmon-accent"}>
+                <label className={"my-6 text-sm px-4 py-1 rounded-full w-fit bg-salmon-accent/25 text-salmon-accent"}>
                   Discover
                 </label>
               }
@@ -72,7 +75,7 @@ const AcademyHook = () => {
               img="/static/home-shorelab_2.webp"
               // source google maps
               label={
-                <label className={"my-6 text-[15px] px-4 py-1 rounded-full w-fit bg-teal-secondary/25 text-teal-secondary"}>
+                <label className={"my-6 text-sm px-4 py-1 rounded-full w-fit bg-teal-secondary/25 text-teal-secondary"}>
                   Engage
                 </label>
               }
@@ -82,19 +85,27 @@ const AcademyHook = () => {
               img="/static/home-shorelab_3.webp"
               // source https://statik.tempo.co/data/2022/04/04/id_1100522/1100522_720.jpg
               label={
-                <label className={"my-6 text-[15px] px-4 py-1 rounded-full w-fit bg-[#83B26E]/25 text-[#83B26E]"}>
+                <label className={"my-6 text-sm px-4 py-1 rounded-full w-fit bg-[#83B26E]/25 text-[#83B26E]"}>
                   Innovate
                 </label>
               }
               caption="Develop tech-driven solutions, create sustainable products, and present your Capstone Project to industry leaders."
             />
           </div>
-          <div className="flex gap-6">
+          <div className="hidden sm:flex gap-6">
             <Link href="/initiatives/shorelab-academy">
               <ButtonSecondary>Learn More</ButtonSecondary>
             </Link>
             <Link href="/initiatives/shorelab-academy/form">
               <ButtonPrimary>Apply Now</ButtonPrimary>
+            </Link>
+          </div>
+          <div className="flex sm:hidden flex-col gap-4 w-full">
+            <Link href="/initiatives/shorelab-academy/form">
+              <ButtonPrimary width="full">Apply Now</ButtonPrimary>
+            </Link>
+            <Link href="/initiatives/shorelab-academy">
+              <ButtonSecondary width="full">Learn More</ButtonSecondary>
             </Link>
           </div>
         </div>

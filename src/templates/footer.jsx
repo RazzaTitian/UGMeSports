@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 
 const GroupHeader = ({children}) => {
   return (
-    <h3 className={ oxygen + " capitalize text-teal-secondary font-bold text-left mb-10 text-[20px]" }>
+    <h3 className={ oxygen + " capitalize text-teal-secondary font-bold text-left mb-4 sm:mb-10 text-xl" }>
       {children}
     </h3>
   )
@@ -16,7 +16,7 @@ const GroupHeader = ({children}) => {
 
 const LinkItem = ({to, children}) => {
   return (
-    <Link href={to} className={oxygen + " text-[20px] text-secondary-white hover:underline hover:text-foam-tertiary transition-colors"}>
+    <Link href={to} className={oxygen + " text-lg text-secondary-white hover:underline hover:text-foam-tertiary transition-colors"}>
       {children}
     </Link>
   )
@@ -34,14 +34,14 @@ const Footer = () => {
   return (
     <footer className="w-full flex flex-col items-center">
       <div className="w-full bg-primary-dark flex justify-center">
-        <div className="w-[90%] max-w-[1300px] pt-20 pb-48 flex flex-col gap-16">
+        <div className="w-[90%] md:w-[80%] max-w-[1300px] pt-20 pb-20 md:pb-48 flex flex-col gap-16">
           {/* form */}
           <div className={ oxygen + "flex flex-col items-center gap-6"}>
             <div className="flex flex-col items-center gap-2">
               <h1 className="text-teal-secondary font-bold text-[27px] leading-none ">Newsletter</h1>
               <h2 className="text-secondary-white text-[20px] text-center">Get the latest news from us</h2>
             </div>
-            <form className="w-1/3 min-w-[254px] flex">
+            <form className="w-full md:w-1/3 min-w-[254px] flex">
               <input type="email" className={oxygen + " text-primary-dark px-4 w-full rounded-l-lg focus:outline-none"} />
               <Button 
                 type="submit"
@@ -55,29 +55,29 @@ const Footer = () => {
             </form>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <h2 className={ oxygen + " text-secondary-white text-[69.82px] font-bold" }>ShoreLab</h2>
-            <div className="grid grid-cols-3 gap-20">
-              <div>
+          <div className="flex gap-10 flex-col items-start md:items-center">
+            <h2 className={ oxygen + " text-secondary-white text-4xl sm:text-7xl font-bold text-center w-full" }>ShoreLab</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-20">
+              <div className="w-full">
                 <GroupHeader>EXPLORE</GroupHeader>
-                <ul className="flex flex-col gap-4">
+                <ul className="flex flex-row md:flex-col gap-4">
                   <li><LinkItem to="/">Home</LinkItem></li>
-                  <li><LinkItem to="#">About Us</LinkItem></li>
+                  <li><LinkItem to="/about">About Us</LinkItem></li>
                   <li><LinkItem to="#">Partners</LinkItem></li>
                 </ul>
               </div>
               <div>
                 <GroupHeader>COMMUNITY</GroupHeader>
-                <ul className="flex flex-col gap-4">
+                <ul className="grid grid-cols-2 md:flex md:flex-col gap-4">
                   <li><LinkItem to="/initiatives/shorelab-academy">ShoreLab Academy</LinkItem></li>
-                  <li><LinkItem to="#">Initiatives</LinkItem></li>
+                  <li><LinkItem to="/initiatives/projects">Initiatives</LinkItem></li>
                   <li><LinkItem to="#">ShoreSnap</LinkItem></li>
                   <li><LinkItem to="#">ShoreLab Insight</LinkItem></li>
                 </ul>
               </div>
               <div>
                 <GroupHeader>INFORMATION</GroupHeader>
-                <ul className="flex flex-col gap-4">
+                <ul className="flex flex-row md:flex-col gap-4">
                   <li><LinkItem to="#">Contact</LinkItem></li>
                   <li><LinkItem to="#">Partnership</LinkItem></li>
                   <li><LinkItem to="#">Career</LinkItem></li>

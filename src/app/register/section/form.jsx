@@ -47,7 +47,7 @@ const Form = () => {
 
   return (
     <div
-      className={`w-2/5 bg-secondary-white py-8 px-6 shadow rounded-lg sm:px-10 `}
+      className={`w-2/5 bg-absolute-white py-8 px-6 shadow rounded-lg sm:px-10 `}
     >
       <div className="text-center">
         <SectionHeading
