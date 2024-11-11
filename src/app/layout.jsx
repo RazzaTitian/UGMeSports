@@ -6,11 +6,11 @@ import dynamic from "next/dynamic";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "ShoreLab Foundation",
-  description: "A website for the seas.",
+  title: "UGM eSports",
+  description: "A website from gamers for gamers.",
 };
 
-const Navbar = dynamic(() => import('@/templates/navbar'), {
+const Navbar = dynamic(() => import("@/templates/navbar"), {
   ssr: false,
 });
 
